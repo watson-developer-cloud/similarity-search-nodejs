@@ -18,7 +18,7 @@ If you want to experiment with modifying the application or use it as a basis fo
 * You must have the following prerequisites installed:
   * the [Node.js](http://nodejs.org/) runtime (including the npm package manager)
   * the [Cloud Foundry command-line client](https://github.com/cloudfoundry/cli#downloads)
-  * A [Collection ID](https://www.ibm.com/watson/developercloud/visual-recognition/api/v3/#create_a_collection) created in the Visual Recognition Service by uploading your own set of images.
+  * A [Collection ID](https://www.ibm.com/watson/developercloud/visual-recognition/api/v3/#create_a_collection) created in the Visual Recognition service by uploading your own set of images.
 
 ## Getting the files
 
@@ -26,9 +26,9 @@ If you want to experiment with modifying the application or use it as a basis fo
 
 ## Setting up the Visual Recognition service
 
-1. Make sure you have logged in to your Bluemix account using Cloud Foundry. For more information, see [the Watson Developer Cloud documentation](https://www.ibm.com/watson/developercloud/doc/getting_started/gs-cf.shtml).
+1. Make sure you have logged in to your Bluemix account using Cloud Foundry. For more information, see [The Cloud Foundry command-line interface](https://www.ibm.com/watson/developercloud/doc/common/getting-started-cf.html).
 
-1. Create the Visual Recognition Service in Bluemix. Note that you can only have one instance of Visual Recognition Service free credentials per Bluemix org. If you can't create credentials, check and see if someone else with access to your org has already created them.
+1. Create the Visual Recognition service in Bluemix. Note that you can only have one instance of Visual Recognition service free credentials per Bluemix org. If you can't create credentials, check and see if someone else with access to your org has already created them.
 
    ```bash
    cf create-service watson_vision_combined <service_plan> <service_instance>
@@ -88,7 +88,7 @@ If you want to experiment with modifying the application or use it as a basis fo
 
 1. On the next line in `.env` add `COLLECTION_ID=<your collection id>`
 
-  You will need to [create a collection](http://www.ibm.com/watson/developercloud/visual-recognition/api/v3/#create_a_collection) of images in the Visual Recognition Service and then upload images to that collection for the demo to work.
+  You will need to [create a collection](http://www.ibm.com/watson/developercloud/visual-recognition/api/v3/#create_a_collection) of images in the Visual Recognition service and then upload images to that collection for the demo to work.
 
   Your `.env` file should now look like this:
 
@@ -169,7 +169,7 @@ This application uses:
   $ cf logs <application-name> --recent
   ```
 
-* For more details about the Visual Recognition Service, see the [documentation](http://www.ibm.com/watson/developercloud/doc/visual-recognition).
+* For more details about the Visual Recognition service, see the [documentation](http://www.ibm.com/watson/developercloud/doc/visual-recognition).
 
 # License
 
