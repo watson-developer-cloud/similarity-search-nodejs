@@ -137,74 +137,30 @@ module.exports = React.createClass({
 
   render() {
     return (
-      <div>
+      <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'column'}}>
         <Header
           mainBreadcrumbs="Visual Recognition"
           mainBreadcrumbsUrl="http://www.ibm.com/watson/developercloud/visual-recognition.html"
           subBreadcrumbs="Similarity Search"
           subBreadcrumbsUrl="https://similarity-search-demo.mybluemix.net"
         />
-        {!this.state.similarImage ? (
-          <div style={{ marginTop: '0rem' }}>
-            <Jumbotron
-              serviceName="Similarity Search"
-              repository="http://github.com/watson-developer-cloud/similarity-search-nodejs"
-              documentation="http://www.ibm.com/watson/developercloud/doc/visual-recognition/"
-              apiReference="http://www.ibm.com/watson/developercloud/visual-recognition/api/v3"
-              version="Beta"
-              startInBluemix="https://console.ng.bluemix.net/registration/?target=/catalog/services/visual-recognition/"
-              description="Visual Recognition’s Similarity Search provides the ability to find
-              related images based on visual input and scores. This capability presents new
-              possibilities to discover relevant content through image based search."
-            />
-            <section className="_full-width-row home">
-              <div className="_container _container_large">
-                <ImagePicker
-                  images={sampleImages}
-                  onClickTile={this.onClickTile}
-                  onDropAccepted={this.onDropAccepted}
-                  onDropRejected={this.onDropRejected}
-                  onUrlSubmit={this.onUrlSubmit}
-                  onClosePreview={this.onClosePreview}
-                  selectedImage={this.state.data ? this.state.selectedImage : null }
-                  userImage={this.state.error ? null : this.state.userImage}
-                  preview={this.state.error === null}
-                  error={this.state.error}
-                  fileError={this.state.fileError}
-                  urlError={this.state.urlError}
-                  multiple={false}
-                  maxSize={2000000}
-                  accept=".png, .gif, .jpg, .jpeg,
-                    image/png, image/x-png, image/gif, image/jpeg, image/jpg"
-                />
-                <SimilarImages
-                  images={this.state.data ? this.state.data.similar_images : null}
-                  loading={this.state.loading}
-                  error={this.state.error || this.state.fileError || this.state.urlError}
-                  onSimilarImageClick={this.onSimilarImageClick}
-                  imagesShown={this.state.imagesShown}
-                />
-                <div className="similar-images--courtesy-message">
-                  Images courtesy of IBM Watson partner&nbsp;
-                  <a
-                    href="http://www.ynap.com"
-                    className="base--a similar-images--courtesy-message-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    YNAP
-                  </a>
-                </div>
-              </div>
-            </section>
-          </div>
-        ) : (
-          <IndividualImage
-            onGoBackClick={this.onGoBackClick}
-            image={this.state.similarImage}
-          />
-        )}
-        <Footer />
+        <div style={{
+          position: 'absolute',
+          bottom: '50%',
+          left: 0,
+          right: 0,
+          margin: 'auto',
+          alignItems: 'center',
+          display: 'flex',
+          paddingLeft: '15px',
+          paddingRight: '15px',
+          flexDirection: 'column',}}>
+            <h3 style={{color: '#511687', font: 'bold'}}>Similarity Search is no longer available.</h3>
+            <p>The beta period for Similarity Search has now closed. Additional information can be found <a href="https://www.ibm.com/blogs/bluemix/2017/08/visual-recognition-api-similarity-search-update/"> here</a> </p>
+        </div>
+        <div style={{position: 'absolute', right: 0, bottom: 0, left: 0}}>
+          <Footer />
+        </div>
       </div>
     );
   },
